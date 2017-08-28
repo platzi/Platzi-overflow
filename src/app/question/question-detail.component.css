@@ -5,3 +5,29 @@
 h2 {
   margin: 0;
 }
+
+.answers {
+  padding: 12px;
+}
+
+.answers-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+h5 {
+  margin-bottom: 0;
+}
+
+h5 small {
+  font-weight: normal;
+  font-size: smaller;
+  color: rgba(0, 0, 0, .54);
+}
+
+.description {
+  padding-left: 6px;
+  border-left: 2px solid #eee;
+  font-size: 14px;
+  margin-top: 6px;
+}
