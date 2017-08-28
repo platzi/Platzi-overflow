@@ -1,4 +1,16 @@
-<h2>{{ question.title }}</h2>
-<p>{{question.description}}</p>
-<i class="{{question.icon}}"></i>
-<p>{{question.createdAt}}</p>
+<md-card>
+  <md-card-header>
+    <div md-card-avatar>
+      <i md-list-icon class="{{question.icon}} icon"></i>
+    </div>
+    <md-card-title>
+      <h2>{{question.title}}</h2>
+    </md-card-title>
+    <md-card-subtitle>
+      <small>Sacha Lifszyc - {{question.createdAt}}</small>
+    </md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+    <p>{{question.description}}</p>
+  </md-card-content>
+</md-card>
