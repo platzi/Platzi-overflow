@@ -1,0 +1,32 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <md-input-container>
+    <input
+      mdInput
+      placeholder="Nombre"
+      formControlName="firstName"
+      id="firstName">
+  </md-input-container>
+  <md-input-container>
+    <input
+      mdInput
+      placeholder="Apellido"
+      formControlName="lastName"
+      id="lastName">
+  </md-input-container>
+  <md-input-container>
+    <input
+      mdInput
+      placeholder="Correo electrónico"
+      formControlName="email"
+      id="email">
+  </md-input-container>
+  <md-input-container>
+    <input
+      type="password"
+      mdInput
+      placeholder="Contraseña"
+      formControlName="password"
+      id="password">
+  </md-input-container>
+  <button type="submit" md-raised-button color="accent">Iniciar sesión</button>
+</form>
