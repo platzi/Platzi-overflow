@@ -4,7 +4,8 @@ import {
   MdIconModule,
   MdCardModule,
   MdButtonModule,
-  MdInputModule
+  MdInputModule,
+  MdListModule
 } from '@angular/material';
 
 const modules = [
@@ -12,7 +13,8 @@ const modules = [
   MdIconModule,
   MdCardModule,
   MdButtonModule,
-  MdInputModule
+  MdInputModule,
+  MdListModule
 ];
 
 @NgModule({
