@@ -1,1 +1,17 @@
-hola estamos en el formulario de carga de nueva pregunta
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <md-input-container>
+    <input
+      mdInput
+      placeholder="Título"
+      name="title"
+      ngModel>
+  </md-input-container>
+  <md-input-container>
+    <input
+      mdInput
+      placeholder="Descripción"
+      name="description"
+      ngModel>
+  </md-input-container>
+  <button type="submit" md-raised-button color="accent">Enviar</button>
+</form>
