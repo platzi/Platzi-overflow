@@ -13,5 +13,10 @@
       name="description"
       ngModel>
   </md-input-container>
+  <md-grid-list cols="3" rowHeight="3:2">
+    <md-grid-tile *ngFor="let icon of icons">
+      <i md-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}"></i>
+    </md-grid-tile>
+  </md-grid-list>
   <button type="submit" md-raised-button color="accent">Enviar</button>
 </form>
