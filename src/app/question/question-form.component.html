@@ -14,6 +14,11 @@
       ngModel>
   </md-input-container>
   <md-grid-list cols="3" rowHeight="3:2">
+    <md-grid-tile>
+      <i md-list-icon class="material-icons">help</i>
+      <small>Sin ícono</small>
+    </md-grid-tile>
+
     <md-grid-tile *ngFor="let icon of icons">
       <i md-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}"></i>
     </md-grid-tile>
