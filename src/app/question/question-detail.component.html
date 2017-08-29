@@ -19,7 +19,7 @@
   <ul class="answers-list" *ngIf="question.answers.length > 0">
     <li *ngFor="let answer of question.answers">
       <h5>
-        {{ answer.user.firstName }} {{ answer.user.lastName }}
+        {{ answer.user.fullName() }}
         <small>{{answer.createdAt | amLocale: 'es' | amTimeAgo }}</small>
       </h5>
       <p class="description">
