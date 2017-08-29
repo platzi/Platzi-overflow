@@ -14,6 +14,7 @@ import { AnswerFormComponent } from './answer/answer-form.component';
 import { SigninScreenComponent } from './auth/signin-screen.component';
 import { SignupScreenComponent } from './auth/signup-screen.component';
 import { QuestionListComponent } from './question/question-list.component';
+import { QuestionFormComponent } from './question/question-form.component';
 
 import { MomentModule } from 'angular2-moment';
 
@@ -24,7 +25,8 @@ import { MomentModule } from 'angular2-moment';
     AnswerFormComponent,
     SigninScreenComponent,
     SignupScreenComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    QuestionFormComponent
   ],
   imports: [
     BrowserModule,
