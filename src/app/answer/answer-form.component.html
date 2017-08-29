@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <md-input-container>
+    <textarea
+      mdInput
+      placeholder="Respuesta"
+      name="description"
+      ngModel></textarea>
+  </md-input-container>
+  <button type="submit" md-raised-button color="accent">Responder</button>
+</form>

@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import {
   MdToolbarModule,
   MdIconModule,
-  MdCardModule
+  MdCardModule,
+  MdButtonModule,
+  MdInputModule
 } from '@angular/material';
 
 const modules = [
   MdToolbarModule,
   MdIconModule,
-  MdCardModule
+  MdCardModule,
+  MdButtonModule,
+  MdInputModule
 ];
 
 @NgModule({
