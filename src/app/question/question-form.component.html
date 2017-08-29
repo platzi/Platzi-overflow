@@ -15,12 +15,20 @@
   </md-input-container>
   <md-grid-list cols="3" rowHeight="3:2">
     <md-grid-tile>
-      <i md-list-icon class="material-icons">help</i>
-      <small>Sin ícono</small>
+      <md-radio-group [ngModel] name="icon">
+        <md-radio-button value='none'>
+          <i md-list-icon class="material-icons">help</i>
+          <small>Sin ícono</small>
+        </md-radio-button>
+      </md-radio-group>
     </md-grid-tile>
 
     <md-grid-tile *ngFor="let icon of icons">
-      <i md-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}"></i>
+      <md-radio-group [ngModel] name="icon">
+        <md-radio-button value="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}">
+          <i md-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}"></i>
+        </md-radio-button>
+      </md-radio-group>
     </md-grid-tile>
   </md-grid-list>
   <button type="submit" md-raised-button color="accent">Enviar</button>
