@@ -16,35 +16,17 @@
 </md-card>
 <div class="answers">
   <h3>Respuestas</h3>
-  <ul class="answers-list" *ngIf="question.answers.lenght > 0">
-    <li>
+  <ul class="answers-list" *ngIf="question.answers.length > 0">
+    <li *ngFor="let answer of question.answers">
       <h5>
-        Paula Becerra
-        <small>hace unos segundos</small>
+        {{ answer.user.firstName }} {{ answer.user.lastName }}
+        <small>{{answer.createdAt | amLocale: 'es' | amTimeAgo }}</small>
       </h5>
       <p class="description">
-        Yo tengo la respuesta!
-      </p>
-    </li>
-    <li>
-      <h5>
-        Paula Becerra
-        <small>hace unos segundos</small>
-      </h5>
-      <p class="description">
-        Yo tengo la respuesta!
-      </p>
-    </li>
-    <li>
-      <h5>
-        Paula Becerra
-        <small>hace unos segundos</small>
-      </h5>
-      <p class="description">
-        Yo tengo la respuesta!
+        {{ answer.description }}
       </p>
     </li>
   </ul>
   <p *ngIf="question.answers.length === 0">Sé el primero en responder esta pregunta</p>
-  <app-answer-form class="answer-form"></app-answer-form>
+  <app-answer-form [question]="question" class="answer-form"></app-answer-form>
 </div>
