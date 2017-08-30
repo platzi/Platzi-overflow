@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:server": "DEBUG=platzi-overflow* nodemon server/index.js --exec babel-node",
+    "start:server": "NODE_ENV=development DEBUG=platzi-overflow* nodemon server/index.js --exec babel-node",
     "start:client": "ng serve"
   },
   "private": true,
