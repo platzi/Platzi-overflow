@@ -1,5 +1,5 @@
 <md-list>
-  <md-list-item *ngFor="let question of questions">
+  <md-list-item *ngFor="let question of questions" [routerLink]="['questions', question._id]">
     <i *ngIf="question.icon === 'none'" md-list-icon class="material-icons help">help</i>
     <i *ngIf="question.icon !== 'none'" md-list-icon class="{{ question.icon }}"></i>
     <h3 md-line>{{question.title}}</h3>
