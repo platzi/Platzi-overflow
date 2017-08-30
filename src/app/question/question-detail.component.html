@@ -1,32 +1,35 @@
-<md-card>
-  <md-card-header>
-    <div md-card-avatar>
-      <i md-list-icon class="{{question.icon}} icon"></i>
-    </div>
-    <md-card-title>
-      <h2>{{question.title}}</h2>
-    </md-card-title>
-    <md-card-subtitle>
-      <small>Sacha Lifszyc - {{question.createdAt | amLocale: 'es' | amTimeAgo }}</small>
-    </md-card-subtitle>
-  </md-card-header>
-  <md-card-content>
-    <p>{{question.description}}</p>
-  </md-card-content>
-</md-card>
-<div class="answers">
-  <h3>Respuestas</h3>
-  <ul class="answers-list" *ngIf="question.answers.length > 0">
-    <li *ngFor="let answer of question.answers">
-      <h5>
-        {{ answer.user.fullName() }}
-        <small>{{answer.createdAt | amLocale: 'es' | amTimeAgo }}</small>
-      </h5>
-      <p class="description">
-        {{ answer.description }}
-      </p>
-    </li>
-  </ul>
-  <p *ngIf="question.answers.length === 0">Sé el primero en responder esta pregunta</p>
-  <app-answer-form [question]="question" class="answer-form"></app-answer-form>
+<md-spinner *ngIf="loading"></md-spinner>
+<div *ngIf="!loading">
+  <md-card>
+    <md-card-header>
+      <div md-card-avatar>
+        <i md-list-icon class="{{question.icon}} icon"></i>
+      </div>
+      <md-card-title>
+        <h2>{{question.title}}</h2>
+      </md-card-title>
+      <md-card-subtitle>
+        <small>Sacha Lifszyc - {{question.createdAt | amLocale: 'es' | amTimeAgo }}</small>
+      </md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <p>{{question.description}}</p>
+    </md-card-content>
+  </md-card>
+  <div class="answers">
+    <h3>Respuestas</h3>
+    <ul class="answers-list" *ngIf="question.answers.length > 0">
+      <li *ngFor="let answer of question.answers">
+        <h5>
+          {{ answer.user.fullName() }}
+          <small>{{answer.createdAt | amLocale: 'es' | amTimeAgo }}</small>
+        </h5>
+        <p class="description">
+          {{ answer.description }}
+        </p>
+      </li>
+    </ul>
+    <p *ngIf="question.answers.length === 0">Sé el primero en responder esta pregunta</p>
+    <app-answer-form [question]="question" class="answer-form"></app-answer-form>
+  </div>
 </div>
