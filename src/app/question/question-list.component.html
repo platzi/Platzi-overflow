@@ -1,11 +1,14 @@
-<md-list>
-  <md-list-item *ngFor="let question of questions" [routerLink]="['questions', question._id]">
-    <i *ngIf="question.icon === 'none'" md-list-icon class="material-icons help">help</i>
-    <i *ngIf="question.icon !== 'none'" md-list-icon class="{{ question.icon }}"></i>
-    <h3 md-line>{{question.title}}</h3>
-    <p md-line>
-      <small>{{question.answers.length}} respuestas - {{question.createdAt | amLocale: 'es' | amTimeAgo }}</small>
-    </p>
-  </md-list-item>
-</md-list>
-<button [routerLink]="['questions/new']" md-fab class="add-question" color="accent">+</button>
+<md-spinner *ngIf="loading"></md-spinner>
+<div *ngIf="!loading">
+  <md-list>
+    <md-list-item *ngFor="let question of questions" [routerLink]="['questions', question._id]">
+      <i *ngIf="question.icon === 'none'" md-list-icon class="material-icons help">help</i>
+      <i *ngIf="question.icon !== 'none'" md-list-icon class="{{ question.icon }}"></i>
+      <h3 md-line>{{question.title}}</h3>
+      <p md-line>
+        <small>{{question.answers.length}} respuestas - {{question.createdAt | amLocale: 'es' | amTimeAgo }}</small>
+      </p>
+    </md-list-item>
+  </md-list>
+  <button [routerLink]="['questions/new']" md-fab class="add-question" color="accent">+</button>
+</div>

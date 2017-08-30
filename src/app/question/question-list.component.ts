@@ -37,6 +37,7 @@ export class QuestionListComponent implements OnInit {
       .getQuestions()
       .then((questions: Question[]) => {
         this.questions = questions;
+        this.loading = false;
       });
   }
 }

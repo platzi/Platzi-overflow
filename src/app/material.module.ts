@@ -7,7 +7,8 @@ import {
   MdInputModule,
   MdListModule,
   MdGridListModule,
-  MdRadioModule
+  MdRadioModule,
+  MdProgressSpinnerModule
 } from '@angular/material';
 
 const modules = [
@@ -18,7 +19,8 @@ const modules = [
   MdInputModule,
   MdListModule,
   MdGridListModule,
-  MdRadioModule
+  MdRadioModule,
+  MdProgressSpinnerModule
 ];
 
 @NgModule({
