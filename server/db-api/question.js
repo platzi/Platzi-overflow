@@ -4,14 +4,14 @@ import { Question } from '../models'
 const debug = new Debug('platzi-overflow:db-api:question')
 
 export default {
-  findAll: async () => {
+  findAll: () => {
     debug('Finding all questions')
-    return await Question.find().populate('answers')
+    return Question.find().populate('answers')
   },
 
-  findById: async (_id) => {
-    debug(`Find question with id ${id}`)
-    return await Question
+  findById: (_id) => {
+    debug(`Find question with id ${_id}`)
+    return Question
       .findOne({ _id })
       .populate('user')
       .populate({
@@ -22,5 +22,11 @@ export default {
           model: 'User'
         }
       })
+  },
+
+  create: (q) => {
+    debug(`Creating new question ${q}`)
+    const question = new Question(q)
+    return question.save()
   }
 }

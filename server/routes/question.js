@@ -1,7 +1,7 @@
 import express from 'express'
 import { required } from '../middleware'
 import { question } from '../db-api'
-import { handleError } from '../config'
+import { handleError } from '../utils'
 
 const app = express.Router()
 
@@ -26,15 +26,21 @@ app.get('/:id', async (req, res) => {
 })
 
 // POST /api/questions
-app.post('/', required, (req, res) => {
-  const question = req.body
+app.post('/', required, async (req, res) => {
+  const { title, description, icon } = req.body
+  const q = {
+    title,
+    description,
+    icon,
+    user: req.user._id
+  }
 
-  question._id = +new Date()
-  question.user = req.user
-  question.createdAt = new Date()
-  question.answers = []
-  questions.push(question)
-  res.status(201).json(question)
+  try {
+    const savedQuestion = await question.create(q)
+    res.status(201).json(savedQuestion)
+  } catch (error) {
+    handleError(error, res)
+  }
 })
 
 app.post('/:id/answers', required, (req, res) => {
