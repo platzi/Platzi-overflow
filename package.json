@@ -35,6 +35,7 @@
     "express": "^4.15.4",
     "hammerjs": "^2.0.8",
     "jsonwebtoken": "^7.4.3",
+    "mongoose": "^4.11.9",
     "nodemon": "^1.11.0",
     "rxjs": "^5.4.2",
     "sweet-scroll": "^2.2.1",
