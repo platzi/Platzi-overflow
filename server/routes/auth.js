@@ -4,15 +4,12 @@ import jwt from 'jsonwebtoken'
 import { secret } from '../config'
 import { User } from '../models'
 import {
-  hashSync as hash
+  hashSync as hash,
+  compareSync as comparePasswords
 } from 'bcryptjs'
 
 const app = express.Router()
 const debug = new Debug('platzi-overflow:auth')
-
-function comparePasswords(providedPassword, userPassword) {
-  return providedPassword === userPassword
-}
 
 app.post('/signin', async (req, res, next) => {
   const { email, password } = req.body
