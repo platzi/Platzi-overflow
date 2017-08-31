@@ -1,6 +1,7 @@
 import express from 'express'
 import { required } from '../middleware'
 import { question } from '../db-api'
+import { handleError } from '../config'
 
 const app = express.Router()
 
@@ -10,16 +11,18 @@ app.get('/', async (req, res) => {
     const questions = await question.findAll()
     res.status(200).json(questions)
   } catch (error) {
-    res.status(500).json({
-      message: 'An error ocurred',
-      error
-    })
+    handleError(error, res)
   }
 })
 
 // GET /api/questions/:id
-app.get('/:id', (req, res) => {
-  res.status(200).json(req.question)
+app.get('/:id', async (req, res) => {
+  try {
+    const q = await question.findById(req.params.id)
+    res.status(200).json(q)
+  } catch (error) {
+    handleError(error, res)
+  }
 })
 
 // POST /api/questions
