@@ -10,7 +10,8 @@ import {
   MdRadioModule,
   MdProgressSpinnerModule,
   MdMenuModule,
-  MdSnackBarModule
+  MdSnackBarModule,
+  MdTabsModule
 } from '@angular/material';
 
 const modules = [
@@ -24,7 +25,8 @@ const modules = [
   MdRadioModule,
   MdProgressSpinnerModule,
   MdMenuModule,
-  MdSnackBarModule
+  MdSnackBarModule,
+  MdTabsModule
 ];
 
 @NgModule({

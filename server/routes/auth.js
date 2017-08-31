@@ -46,7 +46,7 @@ app.post('/signup', async (req, res) => {
     email,
     password: hash(password, 10)
   })
-  debug(`Creating new user: ${user}`)
+  debug(`Creating new user: ${u}`)
   const user = await u.save()
   const token = createToken(user)
   res.status(201).json({

@@ -1,0 +1,9 @@
+<md-tab-group>
+  <md-tab label="Más recientes">
+    <app-question-list sort='-createdAt'></app-question-list>
+  </md-tab>
+  <md-tab label="Hot">
+    <app-question-list sort='-answers'></app-question-list>
+  </md-tab>
+</md-tab-group>
+<button [routerLink]="['questions/new']" md-fab class="add-question" color="accent"><md-icon>add</md-icon></button>
