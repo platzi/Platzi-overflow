@@ -17,6 +17,8 @@ import { SignupScreenComponent } from './auth/signup-screen.component';
 import { QuestionListComponent } from './question/question-list.component';
 import { QuestionFormComponent } from './question/question-form.component';
 
+import { AuthService } from './auth/auth.service';
+
 import { MomentModule } from 'angular2-moment';
 
 import { Routing } from './app.routing';
@@ -41,7 +43,7 @@ import { Routing } from './app.routing';
     Routing,
     HttpModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

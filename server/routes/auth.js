@@ -17,7 +17,7 @@ const users = [
   }
 ]
 
-const findUserByEmail = e => users.find({ email } => email === e)
+const findUserByEmail = e => users.find(({ email }) => email === e)
 
 function comparePasswords(providedPassword, userPassword) {
   return providedPassword === userPassword
