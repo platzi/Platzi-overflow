@@ -3,6 +3,9 @@ import Debug from 'debug'
 import jwt from 'jsonwebtoken'
 import { secret } from '../config'
 import { User } from '../models'
+import {
+  hashSync as hash
+} from 'bcryptjs'
 
 const app = express.Router()
 const debug = new Debug('platzi-overflow:auth')
@@ -44,7 +47,7 @@ app.post('/signup', async (req, res) => {
     firstName,
     lastName,
     email,
-    password
+    password: hash(password, 10)
   })
   debug(`Creating new user: ${user}`)
   const user = await u.save()
